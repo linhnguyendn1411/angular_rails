@@ -1,0 +1,49 @@
+<div class="container" ng-app="managerApp" ng-controller= "managerTodosController as vm"
+  ng-init="vm.intData(<%= @todos.to_json %>)">
+  <h2>Linh Todo</h2>
+  <p>The To do list</p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Context</th>
+        <th>Place</th>
+        <th>Repeat</th>
+        <th>Start</th>
+        <th>End</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="todo in vm.todos">
+        <td ng-bind="todo.id"></td>
+        <td ng-bind="todo.context"></td>
+        <td ng-bind="todo.place"></td>
+        <td ng-bind="todo.repeat"></td>
+        <td ng-bind="todo.start_time"></td>
+        <td ng-bind="todo.end_time"></td>
+        <td ng-bind="todo.status"></td>
+        <td><button ng-click="vm.destroyTodo(todo.id)">X</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <form>
+    <h1>Add new To do</h1>
+    <label for="context">Context</label>
+    <textarea type="text" id="context" ng-model="vm.context"></textarea>
+    <br>
+    <label for="place">place</label>
+    <input type="text" id="place" ng-model="vm.place"><br>
+    <label for="start_time">Start Time</label>
+    <input type="datetime-local" id="start_time" ng-model="vm.start_time"><br>
+    <label for="end_time">End Time</label>
+    <input type="datetime-local" id="end_time" ng-model="vm.end_time"><br>
+    <label for="status">Status</label>
+    <select id="status" ng-model="vm.stats">
+      <option ng-repeat="option in data.status" value="{{option.id}}">{{option.status}}</option>
+    </select><br>
+    <br>
+    <button ng-click="vm.createTodo()">Create</button>
+  </form>
+</div>

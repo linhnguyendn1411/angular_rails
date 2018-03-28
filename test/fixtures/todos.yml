@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  context: MyText
+  repeat: 1
+  place: MyString
+  start_time: 2018-03-28 12:53:16
+  end_time: 2018-03-28 12:53:16
+
+two:
+  context: MyText
+  repeat: 1
+  place: MyString
+  start_time: 2018-03-28 12:53:16
+  end_time: 2018-03-28 12:53:16
